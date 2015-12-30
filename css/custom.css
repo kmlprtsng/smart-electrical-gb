@@ -1,3 +1,20 @@
+/***************
+Helper classes
+****************/
+.link-highlight{
+  text-decoration: underline;
+}
+.link-white, .link-white:hover, .link-white:visited, .link-white:focus{
+    color: white;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+/***************
+Header Styles
+****************/
 #header span.header-left{
   display: none;
 }
@@ -32,9 +49,40 @@
   margin: 15px 0;
 }
 
-.link-highlight{
-  text-decoration: underline;
+/***************
+Contact us
+****************/
+.contact-us{
+  background: #d36c31;
+  padding: 26px 10px;
+  text-align: center;
 }
-.link-white, .link-white:hover, .link-white:visited, .link-white:focus{
-    color: white;
+
+.contact-us p{
+  font-family: 'SourceSansPro-Regular';
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.contact-us p > span{
+  display: block;
+  margin: 10px 0;
+}
+
+@media (min-width: 1048px){
+  .contact-us p{
+    font-family: 'SourceSansPro-Regular';
+    font-weight: bold;
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 0px;
+  }
+}
+
+@media (min-width: 650px){
+  .contact-us p > span{
+    display: inline;
+  }
 }
