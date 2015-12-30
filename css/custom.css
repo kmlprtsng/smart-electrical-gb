@@ -31,3 +31,10 @@
 #header .top-info-container{
   margin: 15px 0;
 }
+
+.link-highlight{
+  text-decoration: underline;
+}
+.link-white, .link-white:hover, .link-white:visited, .link-white:focus{
+    color: white;
+}
