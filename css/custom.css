@@ -1,0 +1,16 @@
+#header span.header-left{
+  display: none;
+}
+
+#header .logo {
+    background: #FBE73A;
+    height: auto;
+    text-align: center;
+}
+
+@media (max-width: 640px){
+  #header .logo a {
+    margin: 15px 0;
+    width: auto;
+  }
+}
