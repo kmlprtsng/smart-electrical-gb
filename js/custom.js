@@ -15,15 +15,15 @@ $(window).load(function(){
 
 		new WOW().init();
 
-		$("#client-logo-slider").owlCarousel({
-			 		loop:true,
-			 		autoplay:true,
-			 		autoplayHoverPause:true,
-			 		autoPlay: 3000, //Set AutoPlay to 3 seconds
-					items : 4,
-					itemsDesktop : [1199,3],
-					itemsDesktopSmall : [979,3]
-				});
+		// $("#client-logo-slider").owlCarousel({
+		// 	 		loop:true,
+		// 	 		autoplay:true,
+		// 	 		autoplayHoverPause:true,
+		// 	 		autoPlay: 3000, //Set AutoPlay to 3 seconds
+		// 			items : 4,
+		// 			itemsDesktop : [1199,3],
+		// 			itemsDesktopSmall : [979,3]
+		// 		});
 
 			/* Back-to-top */
 
