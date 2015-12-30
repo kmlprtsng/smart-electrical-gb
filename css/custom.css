@@ -49,6 +49,13 @@ Header Styles
   margin: 15px 0;
 }
 
+
+#header .top-info .best .best-text p,
+#header .top-info .timing .timing-text p,
+#header .top-info .experience .experience-text p{
+  font-size: 14px;
+}
+
 /***************
 Contact us
 ****************/
