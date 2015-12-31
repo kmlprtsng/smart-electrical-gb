@@ -155,6 +155,18 @@ Services
 }
 
 /***************
+Testimonails
+****************/
+.client-image img{
+  width: 100%;
+}
+
+#clients .client-box .client-text .client-company{
+  color: #9A9A9A;
+  margin-top: 0;
+}
+
+/***************
 Footer
 ****************/
 
