@@ -97,9 +97,17 @@ Contact us
 /***************
 About us
 ****************/
-#about{
+@media (max-width: 991px){ /*767*/
+  #about{
 
+  }
+
+  #about .section-detail .about-image img {
+    display: none;
+  }
 }
+
+
 
 /***************
 Services
