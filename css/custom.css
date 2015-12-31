@@ -97,17 +97,30 @@ Contact us
 /***************
 About us
 ****************/
-@media (max-width: 991px){ /*767*/
-  #about{
-
-  }
-
+@media (max-width: 991px){
   #about .section-detail .about-image img {
     display: none;
   }
+
+  #about .section-detail .about-text {
+    margin-top: 40px;
+    padding-left: 30px;
+  }
 }
 
+#about .section-detail {
+    margin-top: 0;
+}
 
+@media (min-width: 641px) and (max-width: 991px){
+  #about .section-detail .about-text {
+    padding-left: 80px;
+  }
+}
+
+#about .section-detail {
+    margin-top: 0;
+}
 
 /***************
 Services
