@@ -153,6 +153,7 @@ Services
     font-size: 1.8em;
   }
 }
+
 /***************
 Footer
 ****************/
@@ -163,4 +164,11 @@ Footer
 
 #footer .footer-info p{
   padding-bottom: 8px;
+}
+
+/***************
+Misc
+****************/
+.back-to-top {
+  background: #D36C31;
 }
