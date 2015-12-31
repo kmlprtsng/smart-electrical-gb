@@ -136,6 +136,23 @@ Services
   text-transform: none;
 }
 
+.services-body{
+  text-align: center;
+}
+
+.service-col p{
+  font-size: 1.5em;
+  color: #E4E4E4;
+  font-weight: bold;
+  font-family: 'SourceSansPro-Regular';
+  text-shadow: 1px 1px 1px #19171C;
+}
+
+@media (min-width: 768px){
+  .service-col p{
+    font-size: 1.8em;
+  }
+}
 /***************
 Footer
 ****************/
