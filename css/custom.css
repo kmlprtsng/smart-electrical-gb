@@ -184,3 +184,7 @@ Misc
 .back-to-top {
   background: #D36C31;
 }
+
+#header{
+  display: none;
+}
