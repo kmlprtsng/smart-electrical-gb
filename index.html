@@ -430,13 +430,20 @@
 				},
 				submitHandler: function() {
 					var curForm = jQuery('form.contact-form');
-					console.log(curForm);
+
 					$.ajax({
 						url: 'mail.php',
 						type: 'POST',
 						data: jQuery(curForm).serialize(),
 						success: function(data) {
 							jQuery('.expMessage').html(data);
+
+							if(data.indexOf("alert-danger") >= 0){
+									return;
+							}
+
+							curForm.find("button").prop('disabled', true);;
+							curForm.find("input, textarea").attr('readonly', 'readonly');
 						}
 					});
 				}
