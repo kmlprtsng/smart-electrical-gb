@@ -12,6 +12,9 @@ Helper classes
     white-space: nowrap;
 }
 
+.error{
+  color: #FF2B2B;
+}
 /***************
 Header Styles
 ****************/

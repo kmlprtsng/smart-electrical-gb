@@ -124,7 +124,7 @@
 							<div class="expMessage"></div>
 							<div class="form-group">
 								<label class="sr-only" for="inputName">Name</label>
-								<input type="text" class="form-control" id="inputName" placeholder="Name:" name="formInput[name]" required>
+								<input type="text" class="form-control" id="inputName" placeholder="Name:" name="formInput[name]" required minlength="2">
 							</div>
 							<div class="form-group">
 								<label class="sr-only" for="inputEmail">Email</label>
@@ -132,10 +132,10 @@
 							</div>
 							<div class="form-group">
 								<label class="sr-only" for="inputPhone">Phone</label>
-								<input type="text" class="form-control" id="inputPhone" placeholder="Phone:" name="formInput[phone]" required>
+								<input type="number" class="form-control" id="inputPhone" placeholder="Phone:" name="formInput[phone]" required minlength="11" digits>
 							</div>
 							<div class="form-group">
-								<textarea class="form-control" rows="6" name="formInput[message]" placeholder="Message:"></textarea>
+								<textarea class="form-control" rows="6" name="formInput[message]" placeholder="Message:" required minlength="10"></textarea>
 							</div>
 							<input type="hidden" name="action" value="submitform">
 							<button type="submit" class="btn btn-default btn-lg btn-estimation" value="submit">
@@ -415,23 +415,33 @@
 	<!-- Scripts -->
 	<script src="js/wow.min.js"></script>
 	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script type="text/javascript">
 		jQuery(function() {
-			jQuery('body').on('submit', 'form.contact-form', function() {
-				var curForm = jQuery(this);
-				$.ajax({
-					url: 'mail.php',
-					type: 'POST',
-					data: jQuery(curForm).serialize(),
-					success: function(data) {
-						jQuery('.expMessage').html(data);
-					}
-				});
-				return false;
+			jQuery('form.contact-form').validate({
+				highlight: function(element) {
+					$(element).closest('.form-group').addClass('has-error');
+				},
+				unhighlight: function(element) {
+					$(element).closest('.form-group').removeClass('has-error');
+				},
+				submitHandler: function() {
+					var curForm = jQuery('form.contact-form');
+					console.log(curForm);
+					$.ajax({
+						url: 'mail.php',
+						type: 'POST',
+						data: jQuery(curForm).serialize(),
+						success: function(data) {
+							jQuery('.expMessage').html(data);
+						}
+					});
+				}
 			});
+
 		});
 	</script>
 
