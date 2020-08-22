@@ -335,6 +335,11 @@ section.module.parallax-1 {
   color: #000;
 }
 
+.expMessage {
+  color: #00a000;
+  padding-bottom: 3rem;
+}
+
 /* Client-Logos */
 
 #client-logos {

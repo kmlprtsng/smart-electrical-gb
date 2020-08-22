@@ -120,24 +120,28 @@
 							For any information or a free quote please call us on
 							<a href="tel:07896535390" class="link-highlight link-white">07896535390</a> or fill in the form below.
 						</p>
-						<form class="form-inline contact-form">
-							<div class="expMessage"></div>
+						<form class="form-inline contact-form" action="https://mailthis.to/info@smartelectricalgb.co.uk" method="POST">
 							<div class="form-group">
 								<label class="sr-only" for="inputName">Name</label>
-								<input type="text" class="form-control" id="inputName" placeholder="Name:" name="formInput[name]" required minlength="2">
+								<input type="text" class="form-control" id="inputName" placeholder="Name:" name="name" required minlength="2">
 							</div>
 							<div class="form-group">
 								<label class="sr-only" for="inputEmail">Email</label>
-								<input type="email" class="form-control" id="inputEmail" placeholder="Email:" name="formInput[email]" required>
+								<input type="email" class="form-control" id="inputEmail" placeholder="Email:" name="email" required>
 							</div>
 							<div class="form-group">
 								<label class="sr-only" for="inputPhone">Phone</label>
-								<input type="number" class="form-control" id="inputPhone" placeholder="Phone:" name="formInput[phone]" required minlength="11" digits>
+								<input type="number" class="form-control" id="inputPhone" placeholder="Phone:" name="phone" minlength="11" digits>
 							</div>
 							<div class="form-group">
-								<textarea class="form-control" rows="6" name="formInput[message]" placeholder="Message:" required minlength="10"></textarea>
+								<textarea class="form-control" rows="6" name="message" placeholder="Message:" required minlength="10"></textarea>
 							</div>
 							<input type="hidden" name="action" value="submitform">
+							<input type="hidden" name="_subject" value="Smart Electrical contact form submitted">
+							<input type="hidden" name="_honeypot" value="">
+							<input type="hidden" name="_confirmation" value="Thank you for your request. We'll get in touch shortly.">
+							
+							<div class="expMessage"></div>
 							<button type="submit" class="btn btn-default btn-lg btn-estimation" value="submit">
 								<span class="btn-skew-reverse">
 									Submit
@@ -384,24 +388,25 @@
 				unhighlight: function(element) {
 					$(element).closest('.form-group').removeClass('has-error');
 				},
-				submitHandler: function() {
-					var curForm = jQuery('form.contact-form');
+				submitHandler: function(form) {
+					form.submit();
+					form.find("button").prop('disabled', true).hide();
+					// var curForm = jQuery('form.contact-form');
+					// $.ajax({
+					// 	url: 'https://mailthis.to/info@smartelectricalgb.co.uk',
+					// 	type: 'POST',
+					// 	data: jQuery(curForm).serialize(),
+					// 	success: function(data) {
+					// 		jQuery('.expMessage').html("Your request has been submitted successfully.");
 
-					$.ajax({
-						url: 'mail.php',
-						type: 'POST',
-						data: jQuery(curForm).serialize(),
-						success: function(data) {
-							jQuery('.expMessage').html(data);
+					// 		if(data.indexOf("alert-danger") >= 0){
+					// 				return;
+					// 		}
 
-							if(data.indexOf("alert-danger") >= 0){
-									return;
-							}
-
-							curForm.find("button").prop('disabled', true);;
-							curForm.find("input, textarea").attr('readonly', 'readonly');
-						}
-					});
+					// 		curForm.find("button").prop('disabled', true).hide();
+					// 		curForm.find("input, textarea").attr('readonly', 'readonly');
+					// 	}
+					// });
 				}
 			});
 
