@@ -191,6 +191,11 @@ hr.white {
   margin-top: 8px;
   margin-left: 18px;
 }
+
+#header .logo img {
+  max-width: 190px;
+}
+
 #header:after {
   bottom: 0;
   content: "";
